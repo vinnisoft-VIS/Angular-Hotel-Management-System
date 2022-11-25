@@ -1,0 +1,58 @@
+.content-header {
+  margin-top: 1rem;
+}
+
+.header {
+  padding: .55rem 1rem;
+}
+
+.question {
+  font-size: .95rem;
+  padding: .55rem 1rem;
+}
+
+.radio-input {
+  margin-right: .5rem;
+}
+
+.radio-label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  margin-right: 1rem;
+}
+
+.row {
+  align-items: center;
+}
+
+.form-group-radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.meta {
+  font-size: .95rem;
+  padding: .5rem 4rem;
+}
+
+.notes {
+  font-size: .95rem;
+  padding: .5rem 2rem;
+}
+
+.error {
+  margin-left: .75rem;
+}
+
+.disabled-form {
+  opacity: .7;
+}
+
+.declaration-signed {
+  color: green;
+  font-size: 16px;
+  font-weight: 700;
+}

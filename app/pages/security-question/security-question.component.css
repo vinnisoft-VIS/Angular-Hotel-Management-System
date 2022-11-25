@@ -1,0 +1,196 @@
+/**Login Screen ***/
+
+body {
+	font-family: "Karla", sans-serif;
+	background-color: #fff;
+	min-height: 100vh;
+	height: 100%;
+}
+
+.card {
+	border-radius: 0px;
+}
+
+.brand-wrapper {
+	margin-bottom: 19px;
+}
+
+.brand-wrapper .logo {
+	height: 70px;
+}
+
+.login-back-img {
+	background-image: url('../../../assets/login/img/Rectangle.png');
+	background-size: cover;
+	background-position: center
+}
+
+.form-group {
+	margin-bottom: 9px;
+}
+
+.login-card {
+	border: 0;
+	overflow: hidden;
+}
+
+.login-card-img {
+	border-radius: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.login-card .card-body {
+	padding: 65px 60px 60px;
+}
+
+@media (max-width: 422px) {
+	.login-card .card-body {
+		padding: 35px 24px;
+	}
+}
+
+.login-card-description {
+	margin-top: 30px;
+	font-size: 25px;
+	color: #000;
+	font-weight: normal;
+	margin-bottom: 23px;
+}
+
+.login-card form {
+	max-width: 326px;
+	margin: auto
+}
+
+.login-card .form-control {
+	border: 2px solid #eaebf2;
+	padding: 15px 11px;
+	margin-bottom: 0px;
+	min-height: 45px;
+	font-size: 11px;
+	line-height: 15;
+	font-weight: normal;
+	height: 10%;
+}
+
+.login-card .form-control::-webkit-input-placeholder {
+	color: #919aa3;
+}
+
+.login-card .form-control::-moz-placeholder {
+	color: #919aa3;
+}
+
+.login-card .form-control:-ms-input-placeholder {
+	color: #919aa3;
+}
+
+.login-card .form-control::-ms-input-placeholder {
+	color: #919aa3;
+}
+
+.login-card .form-control::placeholder {
+	color: #919aa3;
+}
+
+.lable-text {
+	font-size: 11px;
+	color: #222
+}
+
+.forget-clr a {
+	color: #2d3480;
+	font-size: 11px;
+}
+
+.btn-light {
+	background: #f4f5f9!important;
+	font-size: 12px;
+	padding: 10px 20px;
+}
+
+.text-black {
+	color: #000;
+	font-size: 11px;
+}
+
+.login-btn {
+	padding: 13px 20px 12px;
+	background-color: #2d3480;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 20px;
+	color: #fff;
+	margin-bottom: 24px;
+}
+
+.login-btn:hover {
+	border: 1px solid #000;
+	background-color: transparent;
+	color: #000;
+}
+
+.login-card .forgot-password-link {
+	font-size: 14px;
+	color: #919aa3;
+	margin-bottom: 12px;
+}
+
+.login-card-footer-text a {
+	color: #0d2366!important;
+	font-size: 12px;
+}
+
+.login-card-footer-text {
+	font-size: 14px;
+	margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+	.login-card-footer-text {
+		margin-bottom: 24px;
+	}
+}
+
+.login-card-footer-nav a {
+	font-size: 14px;
+	color: #919aa3;
+}
+
+.pad-0 {
+	padding: 0px!important
+}
+
+.password-eye {
+	position: relative;
+	float: right;
+	top: -54px;
+	right: 20px;
+}
+
+.blue-clr {
+	color: #0d2366!important
+}
+
+
+/**End Login ------------------------------------------------------------------------------------Screen ***/
+
+
+/**Start---------------------------------Register----------------------------------------------- Screen***/
+
+.register-password-eye {
+	position: relative;
+	float: right;
+     top: -34px;
+	right: 20px;
+}
+
+.pad-100{padding:90px 0px}
+/***Reset Screen**/
+.mb-17{margin-top:17px;}

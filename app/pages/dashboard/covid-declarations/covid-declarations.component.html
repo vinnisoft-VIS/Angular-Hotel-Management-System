@@ -1,0 +1,77 @@
+<div class="content-header">
+  <h3 class="text-black">
+    Covid Declarations
+  </h3>
+  <div class="filter-container">
+    <div>
+      <button class="btn btn-light select-date-btn" #selectDate="dpDayPicker" [dpDayPicker]="datePickerConfig"
+        [theme]="'dp-material'" [mode]="'day'" (onChange)="getDate($event)">Select Date
+      </button>
+      <div class="btn-group">
+        <div class="" mwlCalendarPreviousView [view]="CalendarView.Day" [(viewDate)]="date" (click)="getDate(date)">
+          <i aria-hidden="true" class="fa fa-angle-left backcss"></i>
+        </div>
+
+        <button class="btn btn-light" mwlCalendarToday [(viewDate)]="date" (click)="getDate(date)">Today</button>
+
+        <div class="" mwlCalendarNextView [view]="CalendarView.Day" [(viewDate)]="date" (click)="getDate(date)">
+          <i aria-hidden="true" class="fa fa-angle-right backcss"></i>
+        </div>
+        <h3 style="margin: 5px 0 0 20px;" class="lable-checklist">
+          {{ date | calendarDate:(CalendarView.Day + 'ViewTitle'):'en' }}</h3>
+      </div>
+    </div>
+    <div class="toggle-container">
+      <div class="toggle-label">
+        <span>All</span>
+      </div>
+      <label class="switch">
+        <input type="checkbox" (change)="onSymptomaticFilterChange($event)" [(ngModel)]="symptomFilter">
+        <span class="slider round"></span>
+      </label>
+      <div class="toggle-label">
+        <span>Symptomatic</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+  <div class="col-12">
+    <div class="box">
+      <div class="box-body">
+        <div class="table-responsive">
+
+          <table id="covidDeclarations" class="table table-bordered table-separated dataTable table-textsize ">
+            <thead class="thead-light">
+              <tr role="row">
+                <th>Employee<a href="#" class="pull-right hide-sort-btn">
+                    <i class="fa fa-sort text-right" aria-hidden="true"></i></a>
+                </th>
+                <th>Working From Home<a href="#" class="pull-right hide-sort-btn">
+                    <i class="fa fa-sort text-right" aria-hidden="true"></i></a>
+                </th>
+                <th>Symptomatic<a href="#" class="pull-right hide-sort-btn">
+                    <i class="fa fa-sort text-right" aria-hidden="true"></i></a>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody infinite-scroll [infiniteScrollDistance]="scrollDistance"
+              [infiniteScrollUpDistance]="scrollUpDistance" [infiniteScrollThrottle]="throttle">
+              <ng-container *ngFor="let d of filteredDeclarations">
+                <tr class="thead-light" [ngClass]="d.symptomatic===1?'symptomatic':''">
+                  <td>{{d.name}}</td>
+                  <td>{{d.workingFromHome|yesNo}}</td>
+                  <td>{{d.symptomatic|yesNo}}</td>
+                </tr>
+              </ng-container>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

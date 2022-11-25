@@ -1,0 +1,72 @@
+{
+  "Monday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Monday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Tuesday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Tuesday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Wednesday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Wednesday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Thursday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Thursday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Friday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Friday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Saturday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Saturday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  },
+  "Sunday": {
+    "id": null,
+    "createdDate": null,
+    "departmentId": null,
+    "availability": false,
+    "day": "Sunday",
+    "startTime": "",
+    "endTime": "",
+    "userId": ""
+  }
+}

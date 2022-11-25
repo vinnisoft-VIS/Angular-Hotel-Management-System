@@ -1,0 +1,66 @@
+{
+  "header": "Please complete your COVID-19 active screening for contact tracing purposes at home prior to working from home, before leaving for work and each time before you enter a new facility during the workday.",
+  "subheader": "This process helps ensure our facilities continue to remain safe for you to work in, and if thereis a COVID-19 case in a particular facility, we can rapidly identify staff to get instructions from Public Health.",
+  "wfh": "Will you be working from home today?",
+  "review": {
+    "header": "Please review the following statements:",
+    "questions": [{
+        "qId": "1",
+        "question": "In the last 10 days, have you tested positive on a COVID-19 rapid antigen test, a self-testing kit or have been tested and are awaiting results?",
+        "meta": [],
+        "notes": []
+      },
+      {
+        "qId": "2",
+        "question": "Have you been directed by Public Health, a physician or other healthcare professional to self-isolate for a period of time indcluding today?",
+        "meta": [],
+        "notes": []
+      },
+      {
+        "qId": "3",
+        "question": "Do you have any of the following new or worsening, signs or symptoms?",
+        "meta": [
+          "Fever or chills",
+          "Cought, croup (squeaky or whistling nose when breathing), severe difficulty breathing or shortness of breath",
+          "Sore throat, hoarse voice or difficulty swallowing",
+          "Stuffy, congested or runny nose",
+          "Severe chest pains",
+          "Loss of consciousness",
+          "Feeling confused or unsure of where you are",
+          "Not feeling well",
+          "Falling down often",
+          "Fatigue* that is unusual, lack of energy or sluggishness",
+          "Musche aches or joint pain* that is unusual or long lasting",
+          "Headache* that is unusual or long lasting",
+          "Pink eye",
+          "Decrease in or loss of smell or taste",
+          "Lack of appetite",
+          "Digestive issues (nausea/vomiting, diarrhea or stomach pain"
+        ],
+        "notes": [
+          "*If you received a COVID-19 vaccination in the last 48 hours and are experiencing mild headache, mild muscle ache, mild joint pain, and/or mild fatigue that begin after vaccination, and have no other symptoms, answer 'NO' for question 3."
+        ]
+      },
+      {
+        "qId": "4",
+        "question": "In the last 14 days, have you had close contact* with someone who has or is suspected of having COVID-19 (including exhibiting any of the listed symptoms** and/or awaiting test results)? If you are fully vaccinated (received the full series of a Canada-approved COVID-19 vaccine atleast 14 days ago) and have NOT been advised to self-isolate by Public Health, you may answer 'NO' for question 4.",
+        "meta": [],
+        "notes": [
+          "*Close contact menas being less than 2 meters or 6 feet away in the same area for atleast 10 minutes, living in the same home or physical contact such as shaking hands, hugging, being coughed on, sneezed on, spit on or receiving exposure notification from COVID-19 Alert exposure app.",
+          "**If the individual experiencing symptoms was vaccinated in the last 48 hours and is experiencing mild headache, mild muscle or joint ache, and/or mild fatigue and the symptoms started after vaccination, then you can answer 'NO' for question 4."
+        ]
+      },
+      {
+        "qId": "5",
+        "question": "Have you travelled outside of Canada in the past 14 days and been advised to quarantine in accordance with the Government of Canada quarantine requirements?",
+        "meta": [],
+        "notes":[]
+      }
+    ]
+  },
+  "reviewCheckHeader": "Did you answer Yes to ANY of the above questions?",
+  "selfDeclaration": {
+    "header": "Statement",
+    "declaration": "I hereby certify the above information is accurate to the best of my knowledge."
+  }
+}

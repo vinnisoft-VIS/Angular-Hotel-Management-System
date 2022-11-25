@@ -1,0 +1,200 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="content-header">
+  <h3>Revenue On The Books</h3>
+  <ng-container *ngIf="loggedInUser.role === '1'">
+    <div class="dt-buttons btn-group" #selectProperty>
+
+      <button class="btn btn-secondary buttons-copy buttons-html5 blur-clr" tabindex="0"
+        aria-controls="example"><span>Property</span> </button>
+      <button class="brder-nobutton" tabindex="0" aria-controls="example"><select name="select" id="select" required=""
+          [(ngModel)]="selectedProperty" (change)="createSelectedPropertyButton()" class="form-control"
+          aria-invalid="false">
+          <option disabled *ngIf="selectedPropertyArray.length === 0" selected>Select Property</option>
+          <option *ngFor="let property of properties" [ngValue]="property">{{property.PropertyName}}</option>
+        </select>
+      </button>
+
+
+    </div>
+  </ng-container>
+  <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChanged($event)" [selectedIndex]="1">
+
+    <mat-tab label="Summary">
+      <!-- header -->
+      <div class="row" style="margin-top: 30px;">
+        <div class="form-group has-search" style="position: relative; width: 20%; top: -12px; left: 50px;">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search Users" name="searchText">
+        </div>
+        <button class="btn btn-primary blur-clr" style=" left: 720px; width: 10% !important; top: -20px !important;
+                          position: relative; width: 13%; top: 6px;">Rate Shop</button>
+        <button class="btn btn-primary blur-clr" style="left: 730px; width: 10% !important; top: -20px !important;
+                                      position: relative; width: 13%; top: 6px;"
+          [routerLink]="['/admin/dashboard/revenue-star-report']">Star Report</button>
+        <div class="col-12">
+          <div class="box" style="padding: 25px;">
+            <div class="row text-center">
+              <div class="col-md-2 text-left">
+                <div class="btn-group">
+                  <div class="" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                    (viewDateChange)="viewDateChange($event)">
+                    <i aria-hidden="true" class="fa fa-angle-left backcss"></i>
+                  </div>
+
+                  <div class="" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+                    (viewDateChange)="viewDateChange($event)" style="z-index: 10;">
+                    <i aria-hidden="true" class="fa fa-angle-right backcss"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 text-left">
+                <h3 class="lable-checklist">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en': 1 }}</h3>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-12">
+                <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+                </mwl-demo-utils-calendar-header>
+
+                <div>
+                  <!-- TODO: Pass propertyId as input to child and filter out in child -->
+                  <app-monthly-revenue-summary [date]=getDay()></app-monthly-revenue-summary>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Category">
+      <!-- header -->
+      <div class="row" style="margin-top: 30px;">
+        <div class="form-group has-search" style="position: relative; width: 20%; top: -12px; left: 50px;">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input type="text" class="form-control" placeholder="Search Users" name="searchText">
+        </div>
+        <button class="btn btn-primary blur-clr" style=" left: 720px; width: 10% !important; top: -20px !important;
+                          position: relative; width: 13%; top: 6px;">Rate Shop</button>
+        <button class="btn btn-primary blur-clr" style="left: 730px; width: 10% !important; top: -20px !important;
+                                      position: relative; width: 13%; top: 6px;"
+          [routerLink]="['/admin/dashboard/revenue-star-report']">Star Report</button>
+        <div class="col-12">
+          <div class="box" style="padding: 25px;">
+            <div class="row text-center">
+              <div class="col-md-2 text-left">
+                <div class="btn-group">
+                  <button class="btn btn-light" mwlCalendarToday [(viewDate)]="viewDate"
+                    (viewDateChange)="viewDateChange($event)">Today</button>
+
+                  <div class="" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                    (viewDateChange)="viewDateChange($event)">
+                    <i aria-hidden="true" class="fa fa-angle-left backcss"></i>
+                  </div>
+
+                  <div class="" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+                    (viewDateChange)="viewDateChange($event)" style="z-index: 10;">
+                    <i aria-hidden="true" class="fa fa-angle-right backcss"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 text-left">
+                <h3 class="lable-checklist">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en': 1 }}</h3>
+              </div>
+
+              <div class="col-md-6 text-right">
+                <div class="btn-group">
+                  <div class="btn btn-primary" (click)="setView(CalendarView.Month)"
+                    [class.active]="view === CalendarView.Month">
+                    Month
+                  </div>
+                  <div class="btn btn-primary" (click)="setView(CalendarView.Week)"
+                    [class.active]="view === CalendarView.Week">
+                    Week
+                  </div>
+                  <div class="btn btn-primary" (click)="setView(CalendarView.Day)"
+                    [class.active]="view === CalendarView.Day">
+                    Day
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-3">
+                <ng-container *ngIf="view === CalendarView.Day">
+                  <div style="position: relative;margin-bottom: 24px;">
+                    <mat-card class="inline-calendar-card">
+                      <mat-calendar [selected]=viewDate (selectedChange)="inlineCalendarUpdated($event)"></mat-calendar>
+                    </mat-card>
+                  </div>
+                </ng-container>
+                <ng-container *ngIf="view !== CalendarView.Day">
+                  <div class="card newcard sidenav-1" dragOverClass="drag-over" style="margin-top: 28px;">
+                    <div class="card-head">
+                      <h2 class="cld-heading" style="left: 22px; position: relative;">
+                        Filter Types
+                      </h2>
+                    </div>
+                    <div class="card-body">
+                      <input type="checkbox" id="rooms" name="rooms" [(ngModel)]=filters.rooms>
+                      <label for="rooms">Rooms Sold</label><br>
+                      <input type="checkbox" id="revenue" name="revenue" [(ngModel)]=filters.revenue>
+                      <label for="revenue">Revenue</label><br>
+                      <input type="checkbox" id="occupancy" name="occupancy" [(ngModel)]=filters.occupancy>
+                      <label for="occupancy">Occupancy</label><br><br>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+              <div class="col-md-9">
+                <mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+                </mwl-demo-utils-calendar-header>
+
+                <div [ngSwitch]="view">
+                  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events"
+                    [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                    (eventClicked)="handleEvent('Clicked', $event.event.id)"
+                    (eventTimesChanged)="eventTimesChanged($event)" [cellTemplate]="monthCellTemplate" weekStartsOn='1'>
+                  </mwl-calendar-month-view>
+                  <!-- TODO: Pass propertyId as input to child and filter out in child -->
+                  <app-weekly-revenue-report *ngSwitchCase="CalendarView.Week" [weeklyReport]=weeklyStat
+                    [viewDate]=viewDate [filters]=filters>
+                  </app-weekly-revenue-report>
+                  <!-- TODO: Pass propertyId as input to child and filter out in child -->
+                  <app-daily-revenue-report *ngSwitchCase="CalendarView.Day" [day]=day [filters]=filters>
+                  </app-daily-revenue-report>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<ng-template #currentTimeMarkerTemplate let-columnDate="columnDate" let-isVisible="isVisible" let-topPx="topPx">
+  <div class="cal-current-time-marker" *ngIf="isVisible && false" [style.top.px]="0"></div>
+</ng-template>
+
+<ng-template #monthCellTemplate let-day="day">
+  <div class="cal-cell-top">
+    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  </div>
+  <ng-container *ngIf="getDailyStat(day).length > 0">
+    <ng-container *ngTemplateOutlet="days; context:{dayStat: getDailyStat(day)[0]}">
+    </ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-template let-dayStat="dayStat" #days>
+  <div class="property-stat">
+    <ul>
+      <li *ngIf=filters.rooms><span>{{dayStat?.rooms}} Rooms</span></li>
+      <li *ngIf=filters.revenue><span>${{dayStat?.revenue | number:'1.2-2':'en-US'}}</span></li>
+      <li *ngIf=filters.occupancy><span>{{dayStat?.occupancy}} %</span></li>
+    </ul>
+  </div>
+</ng-template>

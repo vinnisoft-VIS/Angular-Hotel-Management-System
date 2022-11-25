@@ -1,0 +1,139 @@
+<div class="content-header">
+  <div class="row">
+    <div class="col-md-12 light-bg">
+      COVID-19 Screening
+    </div>
+    <div class="header declaration-signed" *ngIf="!enableForm">
+      <span>You've already submitted your declaration for today!</span>
+    </div>
+    <div class="header" [ngClass]="!enableForm?'disabled-form':''">
+      <span>{{formConfig.header}}</span>
+    </div>
+    <div class="header" [ngClass]="!enableForm?'disabled-form':''">
+      <span>{{formConfig.subheader}}</span>
+    </div>
+  </div>
+</div>
+<form [formGroup]="form" (ngSubmit)="onSubmitScreening()" [ngClass]="!enableForm?'disabled-form':''">
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="name" class="lable-text">Name</label>
+        <input type="text" name="name" id="name" class="form-control" formControlName="name" readonly
+          placeholder="Full name">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="phone" class="lable-text">Phone Number</label>
+        <input type="text" name="phone" id="phone" class="form-control" formControlName="phone" readonly
+          placeholder="Phone Number">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="email" class="lable-text">Email Address</label>
+        <input type="text" name="email" id="email" class="form-control" formControlName="email" readonly
+          placeholder="Email Address">
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="header">
+      <span>{{formConfig.wfh}}</span>
+      <span class="error" *ngIf="enableForm && controls.workingFromHome.errors?.required && ((!controls.workingFromHome.value) || 
+              (controls.workingFromHome.touched || controls.workingFromHome.dirty))">
+        {{ validationMessages.workingFromHome.required }}
+      </span>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group-radio">
+        <label class="lable-text radio-label">
+          <input type="radio" formControlName="workingFromHome" value=1 class="radio-input">
+          <span>Yes</span>
+        </label>
+        <label class="lable-text radio-label">
+          <input type="radio" formControlName="workingFromHome" value=0 class="radio-input">
+          <span>No</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="header">
+      <span>{{formConfig.review.header}}</span>
+    </div>
+  </div>
+  <ng-container *ngFor="let q of formConfig.review.questions">
+    <div class="row">
+      <div class="question">
+        <span>{{q.qId}}. {{q.question}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <ul *ngIf="q.meta.length > 0" class="meta">
+        <ng-container *ngFor="let m of q.meta">
+          <li>{{m}}</li>
+        </ng-container>
+      </ul>
+    </div>
+    <ng-container *ngIf="q.notes.length>0">
+      <div class="row">
+        <ng-container *ngFor="let n of q.notes">
+          <div class="notes">
+            <span>{{n}}</span>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+  <br>
+
+  <div class="row">
+    <div class="header">
+      <span>{{formConfig.reviewCheckHeader}}</span>
+      <span class="error" *ngIf="enableForm && controls.symptomatic.errors?.required && ((!controls.symptomatic.value) || 
+              (controls.symptomatic.touched || controls.symptomatic.dirty))">
+        {{ validationMessages.symptomatic.required }}
+      </span>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group-radio">
+        <label class="lable-text radio-label">
+          <input type="radio" formControlName="symptomatic" value=1 class="radio-input">
+          <span>Yes</span>
+        </label>
+        <label class="lable-text radio-label">
+          <input type="radio" formControlName="symptomatic" value=0 class="radio-input">
+          <span>No</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="header">
+      <span>{{formConfig.selfDeclaration.header}}</span>
+      <span class="error" *ngIf="enableForm && controls.declarationSigned.errors?.required && ((!controls.declarationSigned.value) || 
+            (controls.declarationSigned.touched || controls.declarationSigned.dirty))">
+        {{ validationMessages.declarationSigned.required }}
+      </span>
+    </div>
+    <div class="col-md-12">
+      <div class="form-group">
+        <input id="declarationSigned" type="radio" class="radio-input" formControlName="declarationSigned" value=1
+          [disabled]=!enableForm>
+        <label for="declarationSigned">{{formConfig.selfDeclaration.declaration}}</label>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <button type="submit" class="blur-clr btn btn-primary" [disabled]="!form.valid || !enableForm">Submit</button>
+</form>

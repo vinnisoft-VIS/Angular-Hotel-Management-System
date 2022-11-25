@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Security Question Screen</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container-fluid pad-0">
+            <div class="card login-card">
+                <div class="row no-gutters">
+                    <div class="col-md-4 login-back-img">
+
+                    </div>
+                    <div class="col-md-8">
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 ">
+                                    <div class="brand-wrapper">
+                                        <img src="assets/logo.png" alt="logo" class="logo">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-right"><button type="button" class="btn btn-light" [routerLink] = "['/']">Sign
+                                        In</button></div>
+                            </div>
+
+                            <form action="#!" class="pad-100">
+                                <p class="login-card-description text-center">Security Question</p>
+                                <div class="form-group">
+                                    <label for="email" class="lable-text">Question</label>
+                                    <select class="form-control" id="sel1" name= "selectedQuestion" [(ngModel)]="selectedQuestion"  >
+                                        <option disabled selected>Select a Question</option>
+                                        <option [ngValue]= "question" *ngFor = "let question of questions" >{{question.Question}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="lable-text">Your Answer</label>
+                                    <input type="text" name="Answer" id="Answer" class="form-control"
+                                        placeholder="Your Answer" [(ngModel)]="answer">
+                                </div>
+
+                                <br />
+                                <input name="Submit" id="Submit" class="btn btn-block login-btn mb-4" type="button"
+                                    value="Submit" (click) = "onClickSubmit()" [disabled]= "!answer">
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

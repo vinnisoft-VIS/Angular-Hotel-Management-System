@@ -1,0 +1,217 @@
+.symptomatic {
+  color: red;
+}
+
+tbody tr {
+  line-height: 2.5rem;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-label {
+  font-size: 16px;
+  margin: 0 0.5rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: .35rem;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2d3480;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2d3480;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2d3480 white;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2d3480;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+.backcss {
+  background: #f1f1f1;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin-left: 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidenav-1 {
+    width: 100%;
+    position: inherit;
+  }
+}
+
+.sticky-card {
+  width: 18%;
+  position: fixed;
+  top: 20%;
+  bottom: 12px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.completed-brd {
+  border: #efefef solid 1px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 19%;
+  padding: 10px 5px;
+  font-size: 12px;
+}
+
+.cpm-pd0 {
+  padding: 0px;
+}
+
+.btn:hover {
+  text-decoration: none !important;
+  cursor: context-menu !important;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+@media screen and (max-width: 1025px) {
+  .mat-tab-body-wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mat-tab-body-wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mat-tab-body-wrapper {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mat-tab-body-wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mat-tab-body-wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mat-tab-body-wrapper {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .mat-tab-body-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mat-tab-body-wrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .mat-tab-body-wrapper {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .mat-tab-body-wrapper {
+    width: 100%;
+  }
+}
+
+.select-date-btn {
+  border-radius: 3px;
+  border: none;
+  margin-right: 12px;
+  padding: 10px;
+}
+
+.dp-current-location-btn {
+  display: none !important;
+}

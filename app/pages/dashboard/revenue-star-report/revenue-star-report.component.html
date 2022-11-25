@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="content-header">
+  <h3>Star Report</h3>
+  <ng-container *ngIf="loggedInUser.role === '1'">
+    <div class="dt-buttons btn-group" #selectProperty>
+
+      <button class="btn btn-secondary buttons-copy buttons-html5 blur-clr" tabindex="0"
+        aria-controls="example"><span>Property</span> </button>
+      <button class="brder-nobutton" tabindex="0" aria-controls="example"><select name="select" id="select" required=""
+          [(ngModel)]="selectedProperty" (change)="createSelectedPropertyButton()" class="form-control"
+          aria-invalid="false">
+          <option disabled *ngIf="selectedPropertyArray.length === 0" selected>Select Property</option>
+          <option *ngFor="let property of properties" [ngValue]="property">{{property.PropertyName}}</option>
+        </select>
+      </button>
+    </div>
+  </ng-container>
+  <mat-tab-group mat-align-tabs="center" (selectedTabChange)="onTabChanged($event)">
+    <mat-tab label="Monthly">
+      <!-- TODO: Pass propertyId as input to child and filter out in child -->
+      <app-monthly-star-report></app-monthly-star-report>
+    </mat-tab>
+    <mat-tab label="Weekly">
+      <!-- TODO: Pass propertyId as input to child and filter out in child -->
+      <app-weekly-star-report [isActual]=isActual></app-weekly-star-report>
+    </mat-tab>
+    <mat-tab label="28 Days">
+      <!-- TODO: Pass propertyId as input to child and filter out in child -->
+      <app-weekly-star-report [isActual]=isActual></app-weekly-star-report>
+    </mat-tab>
+  </mat-tab-group>
+</div>

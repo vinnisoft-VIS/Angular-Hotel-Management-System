@@ -1,0 +1,188 @@
+@import url(../../../../assets/css/font-property.css);
+@import url(../../../../assets/css/icons/font-awesome/css/font-awesome.css);
+@import url(../../../../assets/css/icons/Ionicons/css/ionicons.css);
+@import url(../../../../assets/css/icons/themify-icons/themify-icons.css);
+@import url(../../../../assets/css/icons/linea-icons/linea.css);
+@import url(../../../../assets/css/icons/glyphicons/glyphicon.css);
+@import url(../../../../assets/css/icons/flag-icon-css/css/flag-icon.css);
+@import url(../../../../assets/css/icons/material-design-iconic-font/css/materialdesignicons.css);
+@import url(../../../../assets/css/icons/simple-line-icons/css/simple-line-icons.css);
+@import url(../../../../assets/css/icons/cryptocoins-master/cryptocoins.css);
+
+@import url(../../../../assets/css/icons/iconsmind/style.css);
+
+.brder-nobutton {
+  border: none !important;
+  padding: 3px;
+}
+
+.brder-nobutton select {
+  border: none !important;
+  background: transparent !important;
+}
+
+.mat-tab-group {
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.mat-tab-list {
+  left: 0% !important;
+}
+
+.year-header {
+  color: black;
+  left: 20px;
+  position: relative;
+  top: 8px;
+}
+
+.arrow-btn {
+  left: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.backcss {
+  background: #f1f1f1;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin-left: 10px;
+}
+
+.zui-table {
+  border: none;
+  border-collapse: separate;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+
+.zui-table thead th {
+  background-color: #e5e5e5;
+  border: none;
+  color: #336B6B;
+  padding: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.zui-table tbody td {
+
+  padding: 10px;
+}
+
+.zui-wrapper {
+  position: relative;
+}
+
+.zui-scroller {
+  margin-bottom: 10px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.zui-table .zui-sticky-col {
+  border-left: solid 1px #DDEFEF;
+  border-right: solid 1px #DDEFEF;
+  border-bottom: solid 1px #DDEFEF;
+  left: 0;
+  width: 111px;
+  position: sticky;
+  top: auto;
+  z-index: 1;
+  padding: 9px !important;
+  background: #fff;
+  top: auto;
+
+}
+
+.last-fixed {
+  position: sticky;
+  right: 0px;
+  z-index: 1;
+  background: #fff;
+}
+
+.space-left {
+  float: right;
+  font-size: 11px;
+}
+
+.text-adr-1 {
+  left: 30%;
+  position: relative;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2d3480 white;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #2d3480;
+  border-radius: 20px;
+  border: 3px solid white;
+}
+
+.backcss {
+  background: #f1f1f1;
+  border-radius: 5px;
+  padding: 12px 15px;
+  margin-left: 10px;
+}
+
+.clr-chng:hover {
+  background-color: darkslateblue;
+  color: #fff;
+  padding: 5px
+}
+
+.clr-chng {
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  padding: 5px;
+  color: #000;
+  cursor: pointer;
+}
+
+.mrg-20 {
+  margin-top: 20px;
+}
+
+
+.zui-table thead th {
+  font-size: 12px;
+}
+
+.zui-table tbody td {
+  font-size: 12px;
+  text-align: center;
+}
+
+.space-right {
+  float: left
+}
+
+.table-separated tbody tr>*:first-child {
+  text-align: left !important;
+}
+
+tr:first-child td {
+  color: #2d3480;
+}
+
+tr:first-child td:hover {
+  color: #fff;
+}
